@@ -1,5 +1,29 @@
 const router = require('express').Router();
 const Plants = require('./plants-model.js');
+const multer = require('multer');
+
+// SETTING UP FILE PARAMS
+const storage = multer.diskStorage({
+  destination: './uploads',
+  filename: (req, file, cb) => {
+    cb(null, Date.now() + file.originalname);
+  }
+});
+const fileFilter = (req, file, cb) => {
+  if(file.mimetype === 'image/jpeg' || file.mimetype === 'image/png') {
+    cb(null, true);
+  } else {
+    cb(null, false);
+  }
+}
+const upload = multer({
+  storage: storage,
+  limits: {
+    fileSize: 1024 * 1024 * 5
+  },
+  fileFilter: fileFilter
+});
+
 
 router.get('/', (req, res) => {
   console.log(req.decodedToken);
@@ -42,11 +66,12 @@ router.get('/:id', (req, res) => {
     });
 });
 
-router.post('/', (req, res) => {
-  console.log(req.decodedToken);
+router.post('/', upload.single('image'), (req, res) => {
+  console.log(req.file);
   const added = req.body;
   const id = req.decodedToken.id;
-  Plants.add(added, id)
+  const plantImage = req.file.path;
+  Plants.add(added, plantImage, id)
     .then(plant => {
       if(plant) {
         res.status(201).json(plant);
@@ -90,8 +115,6 @@ router.delete('/:id', (req, res) => {
       res.status(500).json({ err: "There was an error deleting this plant", err });
     });
 });
-
-// BACKUP GET USERS PLANT BY USER ID:
 
 
 

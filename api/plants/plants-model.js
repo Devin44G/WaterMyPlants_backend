@@ -21,16 +21,9 @@ function findById(id) {
     .select('*');
 }
 
-// async function add(plant, id) {
-//   plant.user_id = id;
-//
-//   return db('plants')
-//     .insert(plant)
-//     .select('plant_id', 'nickname', 'species', 'h2o_frequency');
-// }
-
-async function add(plant, id) {
+async function add(plant, image, id) {
   plant.user_id = id;
+  plant.image = image;
   const [plantid] = await db('plants').insert(plant, 'id');
 
   return findById(plantid);
