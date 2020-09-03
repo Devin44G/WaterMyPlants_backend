@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Lambda-Build-Week-Water-My-Plants-I/back_end.git"
+    "url": "git+https://github.com/Devin44G/plantlyfe_be.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Lambda-Build-Week-Water-My-Plants-I/back_end/issues"
+    "url": "https://github.com/Devin44G/plantlyfe_be/issues"
   },
-  "homepage": "https://github.com/Lambda-Build-Week-Water-My-Plants-I/back_end#readme",
+  "homepage": "https://github.com/Devin44G/plantlyfe_be#readme",
   "devDependencies": {
     "cross-env": "^7.0.2",
     "jest": "^26.0.1",
