@@ -10,6 +10,7 @@ const restricted = require('../auth/restricted-middleware.js');
 
 const server = express();
       server.use(express.json());
+      server.use('/uploads//', express.static('uploads'))
       server.use(cors());
       server.use(helmet());
       server.use('/api/auth', authRouter);
