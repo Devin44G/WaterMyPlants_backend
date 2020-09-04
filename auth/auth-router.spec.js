@@ -14,8 +14,7 @@ const unfinishedReg = {
 
 const testUser = {
   username: `testUser.${numGenerator()}`,
-  password: 'pass',
-  phone_number: 1234567890
+  password: 'pass'
 };
 
 const registered = {

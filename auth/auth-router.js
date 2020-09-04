@@ -10,7 +10,7 @@ auth_router.post('/register', (req, res) => {
 
   userInfo.password = hash;
 
-  if(!req.body.username || !req.body.password || !req.body.phone_number) {
+  if(!req.body.username || !req.body.password) {
     res.status(404).json({ message: "Not all required inputs were entered" });
   } else {
     Users.add(userInfo)
@@ -58,8 +58,7 @@ auth_router.get('/logout', (req, res) => {
 function generateToken(user) {
   const payload = {
     id: user.id,
-    username: user.username,
-    number: user.number
+    username: user.username
   };
 
 

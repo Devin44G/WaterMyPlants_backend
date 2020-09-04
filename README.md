@@ -22,16 +22,14 @@
 ```
 {
   "username": "BrandonSanderson",
-  "password": "AuthorMan2020",
-  "phone_number": "1234567890"
+  "password": "AuthorMan2020"
 }
 ```
 #### The Data Returned by Server After Registering:
 ```
 {
     "id": 1,
-    "username": "BrandonSanderson",
-    "phone_number": "1234567890"
+    "username": "BrandonSanderson"
 }
 ```
 
@@ -107,18 +105,15 @@
 [
     {
         "id": 20,
-        "username": "testUser.901.0631815665126",
-        "phone_number": "1234567890"
+        "username": "testUser.901.0631815665126"
     },
     {
         "id": 21,
-        "username": "testUser.146.05266932369122",
-        "phone_number": "1234567890"
+        "username": "testUser.146.05266932369122"
     },
     {
         "id": 22,
-        "username": "testUser.208.88310756153027",
-        "phone_number": "1234567890"
+        "username": "testUser.208.88310756153027"
     }
 ]
 ```
@@ -126,8 +121,7 @@
 ```
 {
     "id": 20,
-    "username": "testUser.901.0631815665126",
-    "phone_number": "1234567890"
+    "username": "testUser.901.0631815665126"
 }
 ```
 #### <ins>`/api/users/:id/plants: GET`</ins>
@@ -151,12 +145,11 @@
 ```
 #### <ins>`/api/users/:id: PUT`</ins>
 ```
-After performing a put request upon a user editing their information (username, password or phone_number) an object with their id, username and phone_number is returned:
+After performing a put request upon a user editing their information (username, password) an object with their id, username and is returned:
 
 {
     "id": 1,
-    "username": "hellerworld",
-    "phone_number": "2222222222"
+    "username": "hellerworld"
 }
 ```
 #### <ins>`/api/users/:id: DELETE`</ins>

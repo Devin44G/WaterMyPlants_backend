@@ -10,9 +10,6 @@ exports.up = function(knex) {
 
       tbl.string('password', 128)
         .notNullable();
-
-      tbl.string('phone_number', 20)
-        .notNullable();
     })
     .createTable('plants', tbl => {
       tbl.increments();
