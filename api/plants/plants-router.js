@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const Plants = require('./plants-model.js');
 const multer = require('multer');
+const fs = require('fs');
 
 // SETTING UP FILE PARAMS
 const storage = multer.diskStorage({
@@ -70,7 +71,10 @@ router.post('/', upload.single('image'), (req, res) => {
   console.log(req.file);
   const added = req.body;
   const id = req.decodedToken.id;
-  const plantImage = req.file.path;
+  const plantImage = 'No Image';
+  if(req.file !== undefined){
+    plantImage = req.file.path.replace("\\","/");
+  }
   Plants.add(added, plantImage, id)
     .then(plant => {
       if(plant) {

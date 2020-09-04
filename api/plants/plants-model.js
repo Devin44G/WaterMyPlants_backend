@@ -1,4 +1,5 @@
 const db = require('../../db/dbConfig.js');
+const fs = require('fs');
 
 
 module.exports = {
@@ -38,7 +39,11 @@ function update(id, changes) {
     });
 }
 
-function removePlant(id) {
+async function removePlant(id) {
+  const image = await db('plants').where({ id }).first().select('image');
+  if(image.image !== 'No Image') {
+    fs.unlinkSync(`./${image.image}`);
+  }
   return db('plants')
     .where({ id })
     .delete();
