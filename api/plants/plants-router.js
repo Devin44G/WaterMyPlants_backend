@@ -71,7 +71,7 @@ router.post('/', upload.single('image'), (req, res) => {
   console.log(req.file);
   const added = req.body;
   const id = req.decodedToken.id;
-  const plantImage = 'No Image';
+  let plantImage = 'No Image';
   if(req.file !== undefined){
     plantImage = req.file.path.replace("\\","/");
   }
@@ -89,7 +89,7 @@ router.post('/', upload.single('image'), (req, res) => {
     });
 });
 
-router.put("/:id", (req, res) => {
+router.patch("/:id", (req, res) => {
   const { id } = req.params;
   const changes = req.body;
   Plants.update(id, changes)

@@ -27,7 +27,7 @@ router.get('/:id', (req, res) => {
     });
 });
 
-router.put("/:id", (req, res) => {
+router.patch("/:id", (req, res) => {
   const { id } = req.params;
   const changes = req.body;
   Users.update(id, changes)
