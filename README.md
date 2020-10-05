@@ -1,11 +1,28 @@
-# back_end
+# PlantLyfe Backend
+
+#### Version 1.1.0
+
+#### License and Copyright:
+- [License Agreement](LICENSE)
+- &copy; Devin Graham
+---
+
+## Before Getting Started:
+#### Notes:
+- This project is still currently under development
+- Project Priority: Low
+- Due to recent changes to the structure of the API, the documentation is currently not up to date. However, these should all be non-breaking changes.
+
+#### Issues:
+- Images cannot be added properly on hosted backend (Heroku). Need to swap multer for multer-s3.
+---
 
 ## Getting Started Locally:
-1. Clone this repository
+1. Fork and clone this repository
 1. Run **npm i** from root directory
-1. Run **npm run server** to start the server on your machine (will be running on port 5000)
- * Be sure to have this server running when trying to test your React app.
- * <b><i>NOTE: To connect to deployed backend instead of localhost, Heroku deployment can be found here: <ins>https://wmplants-db.herokuapp.com/</ins></i></b>
+1. Run **npm run server** to start the server on your machine (will be running on port 5000, if port not defined in .env)
+ * Be sure to have this server running when trying to test your frontend app.
+ * <b>OLD DEPLOY LINK >> <i>NOTE: To connect to deployed backend instead of localhost, Heroku deployment can be found here: <ins>https://wmplants-db.herokuapp.com/</ins></i></b>
 
 ## Endpoints:
 * Example endpoint would be: **localhost:5000/api/users** <ins>OR</ins> if using deployed backend: **wmplants-db.herokuapp.com/api/users**
