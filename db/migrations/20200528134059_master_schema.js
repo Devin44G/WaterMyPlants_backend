@@ -1,4 +1,6 @@
-
+/*
+NOTE: Created one "Master Schema" migrations file, being that I only created two tables
+ */
 exports.up = function(knex) {
   return knex.schema
     .createTable('users', tbl => {

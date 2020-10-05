@@ -42,6 +42,7 @@ function update(id, changes) {
 async function removePlant(id) {
   const image = await db('plants').where({ id }).first().select('image');
   if(image.image !== 'No Image') {
+    // If image actually exists in image column, remove that from the "uploads" dir upon deletion
     fs.unlinkSync(`./${image.image}`);
   }
   return db('plants')

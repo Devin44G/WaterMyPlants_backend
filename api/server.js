@@ -3,6 +3,7 @@ const session = require('express-session');
 const helmet = require('helmet');
 const cors = require('cors');
 
+// Routes
 const authRouter = require('../auth/auth-router.js');
 const usersRouter = require('./users/users-router.js');
 const plantsRouter = require('./plants/plants-router.js');

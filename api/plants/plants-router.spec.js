@@ -13,7 +13,7 @@ const newPlant = {
   h2o_frequency: 'Once Weekly'
 };
 
-
+// TESTING ENDPOINTS
 describe('users-router.js', () => {
 // GET PLANTS
   describe('GET /', () => {

@@ -6,7 +6,7 @@ const Users = require('../api/users/users-model.js');
 
 auth_router.post('/register', (req, res) => {
   const userInfo = req.body;
-  const hash = bcrypt.hashSync(userInfo.password, 10);
+  const hash = bcrypt.hashSync(userInfo.password, 10); // << Defining how many times I want password to be hashed
 
   userInfo.password = hash;
 
@@ -55,6 +55,7 @@ auth_router.get('/logout', (req, res) => {
   }
 });
 
+// Creating func to generate a token
 function generateToken(user) {
   const payload = {
     id: user.id,
